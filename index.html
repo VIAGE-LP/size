@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>尺寸計算機</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card" style="width: 15rem;" id="selectForm">
+            <div class="card-body">
+                <div class="input">
+                    <label class="input-text" for="Upperchest">上圍</label>
+                    <select class="custom-select mb-2" id="Upperchest" aria-label="Example select with button addon">
+                        <option selected>請選擇</option>
+                        <option value="66">66cm</option>
+                        <option value="67">67cm</option>
+                        <option value="68">68cm</option>
+                        <option value="69">69cm</option>
+                        <option value="70">70cm</option>
+                        <option value="71">71cm</option>
+                        <option value="72">72cm</option>
+                        <option value="73">73cm</option>
+                        <option value="74">74cm</option>
+                        <option value="75">75cm</option>
+                        <option value="76">76cm</option>
+                        <option value="77">77cm</option>
+                        <option value="78">78cm</option>
+                        <option value="79">79cm</option>
+                        <option value="80">80cm</option>
+                        <option value="81">81cm</option>
+                        <option value="82">82cm</option>
+                        <option value="83">83cm</option>
+                        <option value="84">84cm</option>
+                        <option value="85">85cm</option>
+                        <option value="86">86cm</option>
+                        <option value="87">87cm</option>
+                        <option value="88">88cm</option>
+                        <option value="89">89cm</option>
+                        <option value="90">90cm</option>
+                        <option value="91">91cm</option>
+                        <option value="92">92cm</option>
+                        <option value="93">93cm</option>
+                        <option value="94">94cm</option>
+                        <option value="95">95cm</option>
+                        <option value="96">96cm</option>
+                        <option value="97">97cm</option>
+                        <option value="98">98cm</option>
+                        <option value="99">99cm</option>
+                        <option value="100">100cm</option>
+                        <option value="101">101cm</option>
+                        <option value="102">102cm</option>
+                        <option value="103">103cm</option>
+                        <option value="104">104cm</option>
+                        <option value="105">105cm</option>
+                        <option value="106">106cm</option>
+                        <option value="107">107cm</option>
+                        <option value="108">108cm</option>
+                        <option value="109">109cm</option>
+                        <option value="110">110cm</option>
+                    </select>
+
+
+                    <label class="input-text" for="Lowerchest">下圍</label>
+                    <select class="custom-select mb-2" id="Lowerchest" aria-label="Example select with button addon">
+                        <option selected>請選擇</option>
+                        <option value="55">55cm</option>
+                        <option value="56">56cm</option>
+                        <option value="57">57cm</option>
+                        <option value="58">58cm</option>
+                        <option value="59">59cm</option>
+                        <option value="60">60cm</option>
+                        <option value="61">61cm</option>
+                        <option value="62">62cm</option>
+                        <option value="63">63cm</option>
+                        <option value="64">64cm</option>
+                        <option value="65">65cm</option>
+                        <option value="66">66cm</option>
+                        <option value="67">67cm</option>
+                        <option value="68">68cm</option>
+                        <option value="69">69cm</option>
+                        <option value="70">70cm</option>
+                        <option value="71">71cm</option>
+                        <option value="72">72cm</option>
+                        <option value="73">73cm</option>
+                        <option value="74">74cm</option>
+                        <option value="75">75cm</option>
+                        <option value="76">76cm</option>
+                        <option value="77">77cm</option>
+                        <option value="78">78cm</option>
+                        <option value="79">79cm</option>
+                        <option value="80">80cm</option>
+                        <option value="81">81cm</option>
+                        <option value="82">82cm</option>
+                        <option value="83">83cm</option>
+                        <option value="84">84cm</option>
+                        <option value="85">85cm</option>
+                        <option value="86">86cm</option>
+                        <option value="87">87cm</option>
+                        <option value="88">88cm</option>
+                        <option value="89">89cm</option>
+                        <option value="90">90cm</option>
+                        <option value="91">91cm</option>
+                        <option value="92">92cm</option>
+                        <option value="93">93cm</option>
+                        <option value="94">94cm</option>
+                        <option value="95">95cm</option>
+                    </select>
+                <label class="input-text" for="cup">罩杯</label>
+                <select class="custom-select mb-2" id="cup" aria-label="Example select with button addon">
+                    <option selected>請選擇</option>
+                    <option value="A">Ａ</option>
+                    <option value="B">Ｂ</option>
+                    <option value="C">Ｃ</option>
+                    <option value="D">Ｄ</option>
+                    <option value="E">Ｅ</option>
+                    <option value="F">Ｆ</option>
+                </select>
+
+                <label class="input-text" for="style">個性</label>
+                <select class="custom-select mr-2" id="style" aria-label="Example select with button addon">
+                    <option selected value="14_color_01_SMP.jpg">妳是怎樣的女孩兒呢？</option>
+                    <option value="14_color_01_SMP.jpg">可愛</option>
+                    <option value="14_color_02_SMP.jpg">甜美</option>
+                    <option value="14_color_03_SMP.jpg">女人味十足</option>
+                    <option value="14_color_04_SMP.jpg">率性</option>
+                    <option value="14_color_05_SMP.jpg">清新柔和</option>
+                </select>
+            </div>
+            <button class="btn btn-primary mt-3" type="button" id="sizeResult">看結果</button>
+        </div>
+    </div>
+
+    <!-- copy -->
+    <!-- <div class="input">
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="input-text" for="Upperchest">上圍</label>
+                    <select class="custom-select" id="Upperchest" aria-label="Example select with button addon">
+                        <option selected>請選擇</option>
+                        <option value="66">66cm</option>
+                        <option value="67">67cm</option>
+                        <option value="68">68cm</option>
+                        <option value="69">69cm</option>
+                        <option value="70">70cm</option>
+                        <option value="71">71cm</option>
+                        <option value="72">72cm</option>
+                        <option value="73">73cm</option>
+                        <option value="74">74cm</option>
+                        <option value="75">75cm</option>
+                        <option value="76">76cm</option>
+                        <option value="77">77cm</option>
+                        <option value="78">78cm</option>
+                        <option value="79">79cm</option>
+                        <option value="80">80cm</option>
+                        <option value="81">81cm</option>
+                        <option value="82">82cm</option>
+                        <option value="83">83cm</option>
+                        <option value="84">84cm</option>
+                        <option value="85">85cm</option>
+                        <option value="86">86cm</option>
+                        <option value="87">87cm</option>
+                        <option value="88">88cm</option>
+                        <option value="89">89cm</option>
+                        <option value="90">90cm</option>
+                        <option value="91">91cm</option>
+                        <option value="92">92cm</option>
+                        <option value="93">93cm</option>
+                        <option value="94">94cm</option>
+                        <option value="95">95cm</option>
+                        <option value="96">96cm</option>
+                        <option value="97">97cm</option>
+                        <option value="98">98cm</option>
+                        <option value="99">99cm</option>
+                        <option value="100">100cm</option>
+                        <option value="101">101cm</option>
+                        <option value="102">102cm</option>
+                        <option value="103">103cm</option>
+                        <option value="104">104cm</option>
+                        <option value="105">105cm</option>
+                        <option value="106">106cm</option>
+                        <option value="107">107cm</option>
+                        <option value="108">108cm</option>
+                        <option value="109">109cm</option>
+                        <option value="110">110cm</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="input-text" for="Lowerchest">下圍</label>
+                    <select class="custom-select mr-2" id="Lowerchest"
+                        aria-label="Example select with button addon">
+                        <option selected>請選擇</option>
+                        <option value="55">55cm</option>
+                        <option value="56">56cm</option>
+                        <option value="57">57cm</option>
+                        <option value="58">58cm</option>
+                        <option value="59">59cm</option>
+                        <option value="60">60cm</option>
+                        <option value="61">61cm</option>
+                        <option value="62">62cm</option>
+                        <option value="63">63cm</option>
+                        <option value="64">64cm</option>
+                        <option value="65">65cm</option>
+                        <option value="66">66cm</option>
+                        <option value="67">67cm</option>
+                        <option value="68">68cm</option>
+                        <option value="69">69cm</option>
+                        <option value="70">70cm</option>
+                        <option value="71">71cm</option>
+                        <option value="72">72cm</option>
+                        <option value="73">73cm</option>
+                        <option value="74">74cm</option>
+                        <option value="75">75cm</option>
+                        <option value="76">76cm</option>
+                        <option value="77">77cm</option>
+                        <option value="78">78cm</option>
+                        <option value="79">79cm</option>
+                        <option value="80">80cm</option>
+                        <option value="81">81cm</option>
+                        <option value="82">82cm</option>
+                        <option value="83">83cm</option>
+                        <option value="84">84cm</option>
+                        <option value="85">85cm</option>
+                        <option value="86">86cm</option>
+                        <option value="87">87cm</option>
+                        <option value="88">88cm</option>
+                        <option value="89">89cm</option>
+                        <option value="90">90cm</option>
+                        <option value="91">91cm</option>
+                        <option value="92">92cm</option>
+                        <option value="93">93cm</option>
+                        <option value="94">94cm</option>
+                        <option value="95">95cm</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="input-text" for="cup">罩杯</label>
+                    <select class="custom-select mr-2" id="cup" aria-label="Example select with button addon">
+                        <option selected>請選擇</option>
+                        <option value="A">Ａ</option>
+                        <option value="B">Ｂ</option>
+                        <option value="C">Ｃ</option>
+                        <option value="D">Ｄ</option>
+                        <option value="E">Ｅ</option>
+                        <option value="F">Ｆ</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="input-text" for="style">個性</label>
+                    <select class="custom-select mr-2" id="style" aria-label="Example select with button addon">
+                        <option selected value="14_color_01_SMP.jpg">妳是怎樣的女孩兒呢？</option>
+                        <option value="14_color_01_SMP.jpg">可愛</option>
+                        <option value="14_color_02_SMP.jpg">甜美</option>
+                        <option value="14_color_03_SMP.jpg">女人味十足</option>
+                        <option value="14_color_04_SMP.jpg">率性</option>
+                        <option value="14_color_05_SMP.jpg">清新柔和</option>
+                    </select>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+    <script src="js/size.js"></script>
+</body>
+
+</html>
