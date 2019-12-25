@@ -103,12 +103,30 @@ $(document).ready(function () {
             suggestion = '我們建議您可以選擇M/L尺寸，VIAGE晚安內衣強化包覆，全面提拉托，讓胸型更加渾圓立挺！';
             size = " M/L";
         }else if (
-            ((76 <= Lowerchest && Lowerchest <= 80) && (Upperchest >= 102 && Upperchest <= 104) || ((76 <= Lowerchest && Lowerchest <= 80) && (cup == "F"))) ||
-            ((81 <= Lowerchest && Lowerchest <= 85) && (Upperchest >= 86 && Upperchest <= 90) || ((81 <= Lowerchest && Lowerchest <= 85) && (cup == "A")))
+            ((81 <= Lowerchest && Lowerchest <= 85) && (Upperchest >= 105 && Upperchest <= 108) || ((81 <= Lowerchest && Lowerchest <= 85) && (cup == "F"))) ||
+            ((86 <= Lowerchest && Lowerchest <= 90) && (Upperchest >= 91 && Upperchest <= 96) || ((86 <= Lowerchest && Lowerchest <= 90) && (cup == "A")))
         ) {
-            suggestion = '我們建議您可以選擇M/L尺寸，VIAGE晚安內衣強化包覆，全面提拉托，讓胸型更加渾圓立挺！';
-            size = " M/L";
+            suggestion = '我們建議您可以選擇L尺寸，VIAGE晚安內衣特殊編織法造就超強伸縮性，舒適不壓胸，塑造好胸型！';
+            size = " L";
+        }else if (
+            ((86 <= Lowerchest && Lowerchest <= 90) && (Upperchest >= 97 && Upperchest <= 100) || ((86 <= Lowerchest && Lowerchest <= 90) && (cup == "B")))||
+            ((86 <= Lowerchest && Lowerchest <= 90) && (Upperchest >= 101 && Upperchest <= 104) || ((86 <= Lowerchest && Lowerchest <= 90) && (cup == "C")))||
+            ((86 <= Lowerchest && Lowerchest <= 90) && (Upperchest >= 105 && Upperchest <= 108) || ((86 <= Lowerchest && Lowerchest <= 90) && (cup == "D")))
+        ) {
+            suggestion = '有兩種尺寸都很推薦您嘗試喔！L號對您來說略緊，不過更貼合的包覆也較能達到塑形的效果～不習慣穿著內衣睡覺嗎？LL 號非常適合您夜晚穿著，特殊的編織法以及超強伸縮性，舒適不壓胸，塑造好胸型！';
+            size = " L 或 LL";
+        }else if (
+            ((86 <= Lowerchest && Lowerchest <= 90) && (Upperchest >= 109 && Upperchest <= 111) || ((86 <= Lowerchest && Lowerchest <= 90) && (cup == "E")))||
+            ((86 <= Lowerchest && Lowerchest <= 90) && (Upperchest >= 112 && Upperchest <= 114) || ((86 <= Lowerchest && Lowerchest <= 90) && (cup == "F")))||
+            (91 <Lowerchest)
+        ) {
+            suggestion = '我們建議您可以選擇LL尺寸，VIAGE晚安內衣特殊編織法造就超強伸縮性，舒適不壓胸，塑造好胸型！';
+            size = " LL";
+        }else if (Lowerchest >= 95) {
+            suggestion = "很抱歉！目前我們還沒有提供適合您的尺寸，歡迎您留下聯絡資訊，我們將在推出新尺寸時立即聯繫您~";
+            size = "X";
         }
+
 
         $('.card').html(`
             <img class="card-img-top" src="images/${style}" alt="Card image cap">
