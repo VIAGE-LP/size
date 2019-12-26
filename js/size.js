@@ -11,41 +11,37 @@ $(document).ready(function () {
     //點擊"看結果"按鈕
     $('#sizeResult').on('click', function (e) {
         e.preventDefault();
-        var Lowerchest = parseInt(document.getElementById('Lowerchest').value);
-        var Upperchest = parseInt(document.getElementById('Upperchest').value);
+        var Lowerchest = document.getElementById('Lowerchest').value;
+        var Upperchest = document.getElementById('Upperchest').value;
         var style = document.getElementById('style').value;
         var cup = document.getElementById('cup').value;
-        var cupMath = Upperchest - Lowerchest;
+        var cupMath = parseInt(Upperchest - Lowerchest);
         var suggestion = '';
         var size = '';
 
         //罩杯計算
-        if (cupMath < 10) {
-            cup = "A"
-        } else if (10 <= cupMath && cupMath <= 12.5) {
-            cup = "B"
-        } else if (12.5 <= cupMath && cupMath <= 15) {
-            cup = "C"
-        } else if (15 <= cupMath && cupMath <= 17.5) {
-            cup = "D"
-        } else if (17.5 <= cupMath && cupMath <= 20) {
-            cup = "E"
-        } else if (20 <= cupMath && cupMath <= 22.5) {
-            cup = "F"
-        } else if (22.5 <= cupMath && cupMath <= 25) {
-            cup = "G"
-        } else if (25 <= cupMath) {
-            cup = "H"
-        } else if (cupMath = NaN) {
-            cup = "X"
-        }
+        if ( 0 <= cupMath && cupMath <= 12.5) {
+            cup = "A";
+        } else if (13 <= cupMath && cupMath <= 14) {
+            cup = "B";
+        } else if (15 <= cupMath && cupMath <= 17) {
+            cup = "C";
+        } else if (18 <= cupMath && cupMath <= 19) {
+            cup = "D";
+        } else if (20 <= cupMath && cupMath <= 22) {
+            cup = "E";
+        } else if (23 <= cupMath && cupMath <= 24) {
+            cup = "F";
+        } else if (25 <= cupMath && cupMath <= 27) {
+            cup = "G";
+        } else if (28 <= cupMath && cupMath <= 29) {
+            cup = "H";
+        };
+        console.log(cup, cupMath , Lowerchest);
 
+        
         //尺寸計算
-        if (Lowerchest < 55) {
-            suggestion = "很抱歉！目前我們還沒有提供適合您的尺寸，歡迎您留下聯絡資訊，我們將在推出新尺寸時立即聯繫您~";
-            size = "X";
-        } else if (
-            (55 <= Lowerchest && Lowerchest < 60) ||
+        if  ((55 <= Lowerchest && Lowerchest < 60) ||
             ((60 <= Lowerchest && Lowerchest <= 65) && (Upperchest >= 66 && Upperchest <= 72) || ((60 <= Lowerchest && Lowerchest <= 65) && (cup == "A"))) ||
             ((60 <= Lowerchest && Lowerchest <= 65) && (Upperchest >= 73 && Upperchest <= 75) || ((60 <= Lowerchest && Lowerchest <= 65) && (cup == "B"))) ||
             ((60 <= Lowerchest && Lowerchest <= 65) && (Upperchest >= 76 && Upperchest <= 78) || ((60 <= Lowerchest && Lowerchest <= 65) && (cup == "C"))) ||
@@ -122,19 +118,28 @@ $(document).ready(function () {
         ) {
             suggestion = '我們建議您可以選擇LL尺寸，VIAGE晚安內衣特殊編織法造就超強伸縮性，舒適不壓胸，塑造好胸型！';
             size = " LL";
-        }else if (Lowerchest >= 95) {
-            suggestion = "很抱歉！目前我們還沒有提供適合您的尺寸，歡迎您留下聯絡資訊，我們將在推出新尺寸時立即聯繫您~";
-            size = "X";
-        }
+        };
 
-
-        $('.card').html(`
+        if((Lowerchest=="NaN")||(cupMath > 29)||(cupMath < 0)){
+            $('.card').html(`
+            <img class="card-img-top" src="images/${style}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">X</h5>
+                    <p>很抱歉！目前我們還沒有提供適合您的尺寸，歡迎您留下聯絡資訊，我們將在推出新尺寸時立即聯繫您~</p>
+                    <button class="btn btn-primary mt-3 result" type="button" id="again" onclick="javascript:window.location.reload()">再算一次</button>
+                </div>`);
+        }else if(((cup=="請選擇")&&(Lowerchest=="請選擇"))||((Upperchest=="請選擇")&&(Lowerchest=="請選擇"))){
+            return;
+        }else{
+            $('.card').html(`
             <img class="card-img-top" src="images/${style}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">您的罩杯為${cup}，適合的尺寸為${size}</h5>
                         <p> ${suggestion}</p>
                     <button class="btn btn-primary mt-3 result" type="button" id="again" onclick="javascript:window.location.reload()">再算一次</button>
                 </div>`);
+        }
+        
     });
 });
 
