@@ -19,6 +19,9 @@ $(document).ready(function () {
         var suggestion = '';
         var size = '';
 
+        //清空 表單驗證反饋訊息
+        $('label>span').empty();
+
         //罩杯計算
         if ( 0 <= cupMath && cupMath <= 12.5) {
             cup = "A";
@@ -36,6 +39,8 @@ $(document).ready(function () {
             cup = "G";
         } else if (28 <= cupMath && cupMath <= 29) {
             cup = "H";
+        }else if(cupMath > 29){
+            cup = " ?"
         };
         console.log(cup, cupMath , Lowerchest);
 
@@ -61,7 +66,8 @@ $(document).ready(function () {
             ((60 <= Lowerchest && Lowerchest <= 65) && (Upperchest >= 86 && Upperchest <= 88) || ((60 <= Lowerchest && Lowerchest <= 65) && (cup == "F"))) ||
             ((66 <= Lowerchest && Lowerchest <= 70) && (Upperchest >= 85 && Upperchest <= 88) || ((66 <= Lowerchest && Lowerchest <= 70) && (cup == "D"))) ||
             ((66 <= Lowerchest && Lowerchest <= 70) && (Upperchest >= 89 && Upperchest <= 91) || ((66 <= Lowerchest && Lowerchest <= 70) && (cup == "E"))) ||
-            ((71 <= Lowerchest && Lowerchest <= 75) && (Upperchest >= 76 && Upperchest <= 80) || ((71 <= Lowerchest && Lowerchest <= 75) && (cup == "A")))
+            ((71 <= Lowerchest && Lowerchest <= 75) && (Upperchest >= 76 && Upperchest <= 80) || ((71 <= Lowerchest && Lowerchest <= 75) && (cup == "A"))) ||
+            ((Lowerchest < 66) && (88 < Upperchest && Upperchest <= 98))
         ) {
             suggestion = '我們建議您可以選擇S/M尺寸，VIAGE晚安內衣幫助您將睡覺時走山的肉肉全部"收攏"，越睡越有料！';
             size = " S/M";
@@ -78,7 +84,8 @@ $(document).ready(function () {
             ((71 <= Lowerchest && Lowerchest <= 75) && (Upperchest >= 95 && Upperchest <= 98) || ((71 <= Lowerchest && Lowerchest <= 75) && (cup == "F"))) ||
             ((76 <= Lowerchest && Lowerchest <= 80) && (Upperchest >= 81 && Upperchest <= 86) || ((76 <= Lowerchest && Lowerchest <= 80) && (cup == "A"))) ||
             ((76 <= Lowerchest && Lowerchest <= 80) && (Upperchest >= 87 && Upperchest <= 90) || ((76 <= Lowerchest && Lowerchest <= 80) && (cup == "B"))) ||
-            ((76 <= Lowerchest && Lowerchest <= 80) && (Upperchest >= 91 && Upperchest <= 94) || ((76 <= Lowerchest && Lowerchest <= 80) && (cup == "C"))) 
+            ((76 <= Lowerchest && Lowerchest <= 80) && (Upperchest >= 91 && Upperchest <= 94) || ((76 <= Lowerchest && Lowerchest <= 80) && (cup == "C"))) ||
+            ((66 <= Lowerchest && Lowerchest < 71) && (Upperchest > 98))
         ) {
             suggestion = '我們建議您可以選擇M尺寸，VIAGE晚安內衣強化包覆，全面提拉托，讓胸型更加渾圓立挺！';
             size = " M";
@@ -120,7 +127,8 @@ $(document).ready(function () {
             size = " LL";
         };
 
-        if((Lowerchest=="NaN")||(cupMath > 29)||(cupMath < 0)){
+        //表單驗證＆反饋訊息
+        if((Lowerchest=="NaN")||(cupMath < 0)){
             $('.card').html(`
             <img class="card-img-top" src="images/${style}" alt="Card image cap">
                 <div class="card-body">
@@ -128,7 +136,17 @@ $(document).ready(function () {
                     <p>很抱歉！目前我們還沒有提供適合您的尺寸，歡迎您留下聯絡資訊，我們將在推出新尺寸時立即聯繫您~</p>
                     <button class="btn btn-primary mt-3 result" type="button" id="again" onclick="javascript:window.location.reload()">再算一次</button>
                 </div>`);
-        }else if(((cup=="請選擇")&&(Lowerchest=="請選擇"))||((Upperchest=="請選擇")&&(Lowerchest=="請選擇"))){
+        }else if((cup=="請選擇")&&(Lowerchest=="請選擇")&&(Upperchest=="請選擇")){
+            $('.cup,.Upperchest,.Lowerchest').append(`<span style="color:red"><small>  必填</small></span>`);
+            return;
+        }else if((Upperchest=="請選擇")&&(Lowerchest=="請選擇")){
+            $('.Lowerchest').append(`<span style="color:red"><small>  必填</small></span>`);
+            return;
+        }else if((Upperchest=="請選擇")&&(cup=="請選擇")){
+            $('.cup,.Upperchest').append(`<span style="color:red"><small>  請擇一選填</small></span>`);
+            return;
+        }else if((cup=="請選擇")&&(Lowerchest=="請選擇")){
+            $('.Lowerchest').append(`<span style="color:red"><small>  必填</small></span>`);
             return;
         }else{
             $('.card').html(`
@@ -138,8 +156,19 @@ $(document).ready(function () {
                         <p> ${suggestion}</p>
                     <button class="btn btn-primary mt-3 result" type="button" id="again" onclick="javascript:window.location.reload()">再算一次</button>
                 </div>`);
+        }  
+    });
+
+    //點擊"清除重填"按鈕
+    $('#reset').on('click', function (e) {
+        var UpperDisable = document.getElementById('Upperchest').disabled;
+        var CupDisable = document.getElementById('cup').disabled;
+
+        if((UpperDisable==true)||(CupDisable==true)){
+            $('#cup,#Upperchest').removeAttr("disabled");
         }
-        
+
+        //清空 表單驗證反饋訊息
+        $('label>span').empty();
     });
 });
-
