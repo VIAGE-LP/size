@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="card" style="width: 15rem;" id="selectForm">
-            <div class="card-body">
+            <div class="card-body firstBox">
                 <form id="myform">
                     <div class="input">
                         <label class="input-text Upperchest" for="Upperchest">上圍</label>
@@ -72,8 +72,9 @@
                         <select class="custom-select mb-2" id="Lowerchest"
                             aria-label="Example select with button addon">
                             <option selected>請選擇</option>
-                            <option value="NaN"><55cm / <26吋</option>
-                            <option value="55">55cm / 26吋</option>
+                            <option value="NaN">
+                                <55cm / <26吋</option> <option value="55">55cm / 26吋
+                            </option>
                             <option value="56">56cm / 26吋</option>
                             <option value="57">57cm / 26吋</option>
                             <option value="58">58cm / 28吋</option>
@@ -129,12 +130,12 @@
 
                         <label class="input-text" for="style">個性</label>
                         <select class="custom-select mr-2" id="style" aria-label="Example select with button addon">
-                            <option selected value="14_color_01_SMP.jpg">妳是怎樣的女孩兒呢？</option>
-                            <option value="14_color_01_SMP.jpg">可愛</option>
-                            <option value="14_color_02_SMP.jpg">甜美</option>
-                            <option value="14_color_03_SMP.jpg">女人味十足</option>
-                            <option value="14_color_04_SMP.jpg">率性</option>
-                            <option value="14_color_05_SMP.jpg">清新柔和</option>
+                            <option selected value="images/14_color_01_SMP.jpg">妳是怎樣的女孩兒呢？</option>
+                            <option value="images/14_color_01_SMP.jpg">可愛</option>
+                            <option value="images/14_color_02_SMP.jpg">甜美</option>
+                            <option value="images/14_color_03_SMP.jpg">女人味十足</option>
+                            <option value="images/14_color_04_SMP.jpg">率性</option>
+                            <option value="images/14_color_05_SMP.jpg">清新柔和</option>
                         </select>
                     </div>
                     <div class="container">
@@ -146,6 +147,16 @@
                         </div>
                     </div>
                 </form>
+            </div>
+
+            <div class="secondBox">
+                <img class="card-img-top photo" src="images/14_color_01_SMP.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">您的罩杯為<span class="cupText"></span>，適合的尺寸為<span class="sizeText"></span></h5>
+                    <p class="suggestionText"></p>
+                    <!-- <input type="reset" value="再算一次" class="btn btn-primary mt-3" id="again"> -->
+                    <button class="btn btn-primary mt-3 result" type="button" id="again">再算一次</button>
+                </div>
             </div>
         </div>
     </div>
