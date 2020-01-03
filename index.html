@@ -12,8 +12,17 @@
 
 <body>
     <div class="container">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-info" id="calculator">立即確認尺寸</button>
+
         <div class="card" style="width: 15rem;" id="selectForm">
             <div class="card-body firstBox">
+                <div class="calculator_title d-flex justify-content-between">
+                    <h5>尺寸計算機</h5>
+                    <button type="button" class="close mb-3" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
                 <form id="myform">
                     <div class="input">
                         <label class="input-text Upperchest" for="Upperchest">上圍</label>
@@ -154,8 +163,12 @@
                 <div class="card-body">
                     <h5 class="card-title">您的罩杯為<span class="cupText"></span>，適合的尺寸為<span class="sizeText"></span></h5>
                     <p class="suggestionText"></p>
-                    <!-- <input type="reset" value="再算一次" class="btn btn-primary mt-3" id="again"> -->
-                    <button class="btn btn-primary mt-3 result" type="button" id="again">再算一次</button>
+                    <div class="container">
+                        <div class="row justify-content-end">
+                            <button class="btn btn-primary mt-3" type="button" id="again">再算一次</button>
+                            <button class="btn btn-secondary mt-3 ml-2" type="button" id="small">關閉</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
