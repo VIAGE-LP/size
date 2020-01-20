@@ -1,0 +1,122 @@
+.main img,.info img,.offer img{
+    width:640px;
+}
+@media screen and (max-width: 768px){
+    .main img,.info img,.offer img{
+        width:100%;
+    }
+}
+.carousel-item{
+    transition: transform 0.1s ease-in-out,-webkit-transform 0.1s ease-in-out;
+}
+#color_carousel_1 .carousel-control-prev{
+    background-color: black;
+    width: 3%;
+    margin-left: 3.5%;
+   }
+#color_carousel_1 .carousel-control-next{
+    background-color: black;
+    width: 3%;
+    margin-right: 3.8%;
+}
+
+.calculator_box{
+    width:640px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 768px){
+    .calculator_box{
+        width:100%;
+    }
+}
+
+.sns_btn {
+    text-align: center;
+}
+.sns_btn ul li{
+    display: inline-block;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.buybtn{
+    width: 174px;
+    position: fixed;
+    right: 0;
+    bottom: 45px;
+    z-index: 99;
+}
+.buybtn img{width: 100%; height: auto;}
+
+@media screen and (max-width: 768px){
+    .buybtn{
+        width: 28%;
+        max-width: 170px;
+    }
+}
+
+.mobile{
+    display: none;
+}
+@media screen and (max-width: 768px){
+.PC{
+    display: none;
+}
+.mobile{
+    display: block;
+}
+}
+
+@media screen and (max-width: 768px){
+    .firstBox p{
+        font-size: 18px;
+    }
+    #myform label{
+        font-size: 18px;
+    }
+}
+/* #productSelection .size-title span{
+    display: none;
+} */
+.sns_link{
+    font-weight: bold;
+    font-size: 18px;
+    color: #0000E3;
+}
+.sns_link:hover{
+    text-decoration: none;
+}
+
+.secondBox h4{
+    font-weight: bold; 
+    font-family: 微軟正黑體; 
+    text-align: center;
+    line-height: 32px;
+}
+.suggestionText{
+    font-size: 18px;
+}
+
+
+/* 注意事項 */
+/* #warning{
+    width:640px;
+}
+.left{
+    background-color: #E0E0E0;
+    padding-left: 6px;
+    text-align: left;
+    font-size: 16px;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+.right{
+    text-align: left;
+    margin: 15px;
+    display: block;
+    line-height: 35px;
+}
+@media screen and (max-width: 768px){
+    #warning{
+        width:100%;
+    }
+} */
