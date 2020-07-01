@@ -48,98 +48,100 @@ $(document).ready(function () {
         if (((55 <= Lowerchest && Lowerchest < 60) && (cup !== "F") && (cup !== "G") && (cup !== "H")) ||
             (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 66 && Upperchest <= 72)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "A"))) ||
             (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 73 && Upperchest <= 75)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "B"))) ||
-            (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 76 && Upperchest <= 78)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "C")))
+            (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 76 && Upperchest <= 78)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "C"))) ||
+            (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 71 && Upperchest <= 76)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "A")))
         ) {
+            //篩選編號2、3、4、5、11
             size = " S";
             $('.suggestionText').html(`我們建議您可以選擇S尺寸，VIAGE晚安內衣幫助您將睡覺時走山的肉肉全部"收攏"，越睡越有料！`);
         } else if (
             (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 79 && Upperchest <= 82)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "D"))) ||
             (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 83 && Upperchest <= 85)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "E"))) ||
             (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 77 && Upperchest <= 80)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "B"))) ||
-            (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 81 && Upperchest <= 84)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "C"))) ||
-            (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 71 && Upperchest <= 76)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "A")))
+            (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 81 && Upperchest <= 84)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "C"))) 
         ) {
+            //篩選編號6、7、12、13
             size = " S 或 S/M";
             $('.suggestionText').html(`推薦您嘗試兩種尺寸！ S號微緊，不過更貼合的包覆也較能達到塑形效果～<br>不習慣穿內衣睡覺？ S/M號非常適合您，舒適剪裁就像沒穿～讓睡眠時的美胸保養更輕鬆！`);
         } else if (
             (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 86 && Upperchest <= 88)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "F"))) ||
             (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 85 && Upperchest <= 88)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "D"))) ||
             (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 89 && Upperchest <= 91)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "E"))) ||
-            (((70 <= Lowerchest && Lowerchest < 75) && (Upperchest >= 76 && Upperchest <= 80)) || ((70 <= Lowerchest && Lowerchest < 75) && (cup == "A"))) ||
-            ((55 <= Lowerchest && Lowerchest < 60) && (cup == "F")) ||
-            ((55 <= Lowerchest && Lowerchest < 60) && (cup == "G"))
+            (((70 <= Lowerchest && Lowerchest < 75) && (Upperchest >= 76 && Upperchest <= 80)) || ((70 <= Lowerchest && Lowerchest < 75) && (cup == "A"))) 
         ) {
+            //篩選編號8、14、15、19
             size = " S/M";
             $('.suggestionText').html(`我們建議您可以選擇S/M尺寸，VIAGE晚安內衣幫助您將睡覺時走山的肉肉全部"收攏"，越睡越有料！`);
         } else if (
+            (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 89 && Upperchest <= 91)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "G"))) ||
+            (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 92 && Upperchest <= 93)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "H"))) ||
             (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 92 && Upperchest <= 94)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "F"))) ||
+            (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 95 && Upperchest <= 96)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "G"))) ||
             (((70 <= Lowerchest && Lowerchest < 75) && (Upperchest >= 81 && Upperchest <= 84)) || ((70 <= Lowerchest && Lowerchest < 75) && (cup == "B"))) ||
             (((70 <= Lowerchest && Lowerchest < 75) && (Upperchest >= 85 && Upperchest <= 88)) || ((70 <= Lowerchest && Lowerchest < 75) && (cup == "C"))) ||
             (((70 <= Lowerchest && Lowerchest < 75) && (Upperchest >= 89 && Upperchest <= 91)) || ((70 <= Lowerchest && Lowerchest < 75) && (cup == "D"))) ||
-            (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 89 && Upperchest <= 91)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "G"))) ||
-            (((60 <= Lowerchest && Lowerchest < 65) && (Upperchest >= 92 && Upperchest <= 93)) || ((60 <= Lowerchest && Lowerchest < 65) && (cup == "H")))
-        ) {
-            size = " S/M 或 M";
-            $('.suggestionText').html(`推薦您嘗試兩種尺寸！ S/M號微緊，不過更貼合的包覆也較能達到塑形效果～<br>不習慣穿內衣睡覺？ M號非常適合您，舒適剪裁就像沒穿～全面提拉托，讓胸型渾圓立挺！`);
-        } else if (
             (((70 <= Lowerchest && Lowerchest < 75) && (Upperchest >= 92 && Upperchest <= 94)) || ((70 <= Lowerchest && Lowerchest < 75) && (cup == "E"))) ||
             (((70 <= Lowerchest && Lowerchest < 75) && (Upperchest >= 95 && Upperchest <= 98)) || ((70 <= Lowerchest && Lowerchest < 75) && (cup == "F"))) ||
             (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 81 && Upperchest <= 86)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "A"))) ||
             (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 87 && Upperchest <= 90)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "B"))) ||
-            (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 91 && Upperchest <= 94)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "C"))) ||
-            (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 95 && Upperchest <= 96)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "G"))) ||
-            (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 97 && Upperchest <= 98)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "H"))) ||
-            ((55 <= Lowerchest && Lowerchest < 60) && (cup == "H"))
+            (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 91 && Upperchest <= 94)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "C"))) 
         ) {
-            suggestion = '';
+            //篩選編號9、10、16、17、20、21、22、23、24、27、28、29
             size = " M";
             $('.suggestionText').html(`我們建議您可以選擇M尺寸，VIAGE晚安內衣強化包覆，全面提拉托，讓胸型更加渾圓立挺！`);
         } else if (
-            (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 95 && Upperchest <= 98)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "D"))) ||
-            (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 99 && Upperchest <= 101)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "E"))) ||
+            (((65 <= Lowerchest && Lowerchest < 70) && (Upperchest >= 97 && Upperchest <= 98)) || ((65 <= Lowerchest && Lowerchest < 70) && (cup == "H"))) ||
             (((70 <= Lowerchest && Lowerchest < 75) && (Upperchest >= 99 && Upperchest <= 100)) || ((70 <= Lowerchest && Lowerchest < 75) && (cup == "G"))) ||
-            (((70 <= Lowerchest && Lowerchest < 75) && (Upperchest >= 101 && Upperchest <= 103)) || ((70 <= Lowerchest && Lowerchest < 75) && (cup == "H"))) ||
-            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 86 && Upperchest <= 90)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "A"))) ||
-            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 91 && Upperchest <= 94)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "B")))
+            (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 95 && Upperchest <= 98)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "D"))) ||
+            (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 99 && Upperchest <= 101)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "E")))
         ) {
+            //篩選編號18、25、30、31
             size = " M 或 M/L";
             $('.suggestionText').html(`推薦您嘗試兩種尺寸！ M號微緊，不過更貼合的包覆也較能達到塑形效果～<br>不習慣穿內衣睡覺？ M/L號非常適合您，舒適剪裁就像沒穿～全面提拉托，讓胸型渾圓立挺！`);
         } else if (
-            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 95 && Upperchest <= 98)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "C"))) ||
             (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 102 && Upperchest <= 104)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "F"))) ||
-            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 99 && Upperchest <= 101)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "D")))
+            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 86 && Upperchest <= 90)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "A")))
         ) {
+            //篩選編號32、35
             size = " M/L";
             $('.suggestionText').html(`我們建議您可以選擇M/L尺寸，VIAGE晚安內衣強化包覆，全面提拉托，讓胸型更加渾圓立挺！`);
         } else if (
-            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 102 && Upperchest <= 104)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "E"))) ||
             (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 105 && Upperchest <= 106)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "G"))) ||
-            (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 107 && Upperchest <= 108)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "H")))
+            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 91 && Upperchest <= 94)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "B"))) ||
+            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 95 && Upperchest <= 98)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "C"))) ||
+            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 99 && Upperchest <= 101)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "D"))) ||
+            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 102 && Upperchest <= 104)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "E")))
         ) {
+            //篩選編號33、36、37、38、39
             size = " M/L 或 L";
             $('.suggestionText').html(`推薦您嘗試兩種尺寸！ M/L號微緊，不過更貼合的包覆也較能達到塑形效果～<br>不習慣穿內衣睡覺？ L號非常適合您，特殊編織法及超強伸縮性，舒適不壓胸，塑造好胸型！`);
         } else if (
+            (((70 <= Lowerchest && Lowerchest < 75) && (Upperchest >= 101 && Upperchest <= 103)) || ((70 <= Lowerchest && Lowerchest < 75) && (cup == "H"))) ||
+            (((75 <= Lowerchest && Lowerchest < 80) && (Upperchest >= 107 && Upperchest <= 108)) || ((75 <= Lowerchest && Lowerchest < 80) && (cup == "H"))) ||
             (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 105 && Upperchest <= 108)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "F"))) ||
             (((85 <= Lowerchest && Lowerchest < 90) && (Upperchest >= 91 && Upperchest <= 96)) || ((85 <= Lowerchest && Lowerchest < 90) && (cup == "A")))
         ) {
+            //篩選編號26、34、40、43
             size = " L";
             $('.suggestionText').html(`我們建議您可以選擇L尺寸，VIAGE晚安內衣特殊編織法造就超強伸縮性，舒適不壓胸，塑造好胸型！`);
         } else if (
+            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 109 && Upperchest <= 110)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "G"))) ||
             (((85 <= Lowerchest && Lowerchest < 90) && (Upperchest >= 97 && Upperchest <= 100)) || ((85 <= Lowerchest && Lowerchest < 90) && (cup == "B"))) ||
             (((85 <= Lowerchest && Lowerchest < 90) && (Upperchest >= 101 && Upperchest <= 104)) || ((85 <= Lowerchest && Lowerchest < 90) && (cup == "C"))) ||
-            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 109 && Upperchest <= 110)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "G"))) ||
-            (((85 <= Lowerchest && Lowerchest < 90) && (Upperchest >= 105 && Upperchest <= 108)) || ((85 <= Lowerchest && Lowerchest < 90) && (cup == "D"))) ||
-            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 111 && Upperchest <= 113)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "H")))
+            (((85 <= Lowerchest && Lowerchest < 90) && (Upperchest >= 105 && Upperchest <= 108)) || ((85 <= Lowerchest && Lowerchest < 90) && (cup == "D"))) 
         ) {
+            //篩選編號41、44、45、46
             size = " L 或 LL";
             $('.suggestionText').html(`推薦您嘗試兩種尺寸！ L號微緊，不過更貼合的包覆也較能達到塑形效果～<br>不習慣穿內衣睡覺？ LL號非常適合您，特殊編織法及超強伸縮性，舒適不壓胸，塑造好胸型！`);
         } else if (
+            (((80 <= Lowerchest && Lowerchest < 85) && (Upperchest >= 111 && Upperchest <= 113)) || ((80 <= Lowerchest && Lowerchest < 85) && (cup == "H"))) ||
             (((85 <= Lowerchest && Lowerchest < 90) && (Upperchest >= 109 && Upperchest <= 111)) || ((85 <= Lowerchest && Lowerchest < 90) && (cup == "E"))) ||
             (((85 <= Lowerchest && Lowerchest < 90) && (Upperchest >= 112 && Upperchest <= 114)) || ((85 <= Lowerchest && Lowerchest < 90) && (cup == "F"))) ||
             (((85 <= Lowerchest && Lowerchest < 90) && (Upperchest >= 115 && Upperchest <= 116)) || ((85 <= Lowerchest && Lowerchest < 90) && (cup == "G"))) ||
             (((85 <= Lowerchest && Lowerchest < 90) && (Upperchest >= 117 && Upperchest <= 118)) || ((85 <= Lowerchest && Lowerchest < 90) && (cup == "H"))) ||
             (90 <= Lowerchest)
         ) {
+            //篩選編號42、47、48、49、50、51
             size = " LL";
             $('.suggestionText').html(`我們建議您可以選擇LL尺寸，VIAGE晚安內衣特殊編織法造就超強伸縮性，舒適不壓胸，塑造好胸型！`);
         };

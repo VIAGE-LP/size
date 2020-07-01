@@ -16,10 +16,12 @@ jQuery(function ($) {
 });
 //window.addEventListener('load', function() { addMomo1(); });
 //window.addEventListener('load', function() { addMomo16(); });
+// DisableSize();
 window.addEventListener("load", function () {
   addPolicy();
   if (window.location.href.indexOf("/vg01/") > -1 ||
     window.location.href.indexOf("/vg01_bk20191218/") > -1 ||
+    window.location.href.indexOf("/vg01_bk20190606/") > -1 ||
     window.location.href.indexOf("/vgdm/") > -1 ||
     window.location.href.indexOf("/vgma04/") > -1 ||
     window.location.href.indexOf("/vgma03/") > -1 ||
@@ -28,7 +30,7 @@ window.addEventListener("load", function () {
     window.location.href.indexOf("/vgdm30/") > -1) {
     edit_tr_HeadMemo3();
   } else {
-    preOrderPromptInit();
+    // preOrderPromptInit();
   }
   if (
     // window.location.href.indexOf("/vgma01/") > -1 ||
@@ -49,7 +51,9 @@ window.addEventListener("load", function () {
     edit_tr_HeadMemo2();
     //disableSize2();
   }
-  disableSize3();
+  edit_tr_HeadMemo4();
+  // preOrderPromptInitAll();
+  // disableSize3();
   // addCardMomo();
 });
 
@@ -203,49 +207,78 @@ function edit_tr_HeadMemo3() {
       ')
 }
 
-//for redmine #9528依賴 把完售的商品 海軍藍S,M號顯示完售並鎖住下拉選項使其無法選購
-function disableSize() {
-  if (document.getElementById("productSelection_A") == null) {
-    setTimeout(disableSize, 1000);
+//edit tr_HeadMemo
+function edit_tr_HeadMemo4() {
+  if (document.getElementById("tr_HeadMemo") == null) {
+    setTimeout(edit_tr_HeadMemo4, 1000);
     return;
   }
-  // jQuery('.titlefont4:eq(4)').after(jQuery('<div>', {
-  //   'class': 'titlefont',
-  //   'html': '<font color="red">S號及M號已售完</font>'
-  // }));
-  jQuery('#A_BK_L').parent().find(':input').attr('disabled', true);
-  jQuery('#A_BK_L').empty().append('<option value="0">缺貨<option>');
+  jQuery("#langHeadMemoTitle").html('注意事項');
 
-  jQuery('#A_SL_L').parent().find(':input').attr('disabled', true);
-  jQuery('#A_SL_L').empty().append('<option value="0">缺貨<option>');
-
-  jQuery('#A_LP_L').parent().find(':input').attr('disabled', true);
-  jQuery('#A_LP_L').empty().append('<option value="0">缺貨<option>');
-
-  jQuery('#A_RD_L').parent().find(':input').attr('disabled', true);
-  jQuery('#A_RD_L').empty().append('<option value="0">缺貨<option>');
+  jQuery("#langHeadMemoBody").html('\
+  ＜退換貨說明＞<br>\
+  本商品屬個人衛生用品，係屬消保法第十九條第一項所稱合理例外情事，<font color="red">個人衛生用品不適用於七天猶豫期之規定，恕無法受理因個人因素之退換貨</font>，敬請見諒。<br>\
+  ＜配送說明＞<br>\
+  本商品係由日本HRC株式会社委託台灣娜珂黛肌美容事業有限公司在台負責發貨，<font color="red">若您因個人因素多次無法收貨而導致商品被退回，退款金額將扣除運費100元台幣</font>，不便之處敬請見諒。<br>\
+  ＜選購指南＞<br>\
+  <font color="red">如未出現顏色選項請重新整理網頁後，即可選購。</font><br>\
+  ＜購買數量限制＞<br>\
+  為保證每位顧客都能體驗到商品，<font color="red">每位顧客每個月限購買10件。</font>超過的自動延期到下個月出貨或取消。\
+  ')
+  // <預購說明><br>\
+  // 因近期商品熱銷，部分商品改為預購制，<font color="red">請看尺碼後是否有（預購）標識，購買預購商品將於2/13起按預購順序出貨。若購買多入組中包含預購商品，將同預購商品發貨日一起發送。</font>');
+  // <br>\
+  // <預購說明><br>\
+  // <font color="red">10/1起部分商品改為預購制，請看尺碼後是否有（預購）標識，購買（預購）商品將於10月底按預購順序出貨。若購買多入組中包含預購商品，將同預購商品發貨日一起發送。標識為（缺貨）的商品暫時無法預購。</font>
 }
 
-//for redmine #9528依賴 把完售的商品 海軍藍S,M號顯示完售並鎖住下拉選項使其無法選購
-function disableSize2() {
+function DisableSize() {
   if (document.getElementById("productSelection_A") == null) {
-    setTimeout(disableSize2, 1000);
+    setTimeout(DisableSize, 1000);
     return;
   }
-  // jQuery('.titlefont4:eq(4)').after(jQuery('<div>', {
-  //   'class': 'titlefont',
-  //   'html': '<font color="red">S號及M號已售完</font>'
-  // }));
-  jQuery('#A_BK_L').parent().find(':input').attr('disabled', true);
-  jQuery('#A_BK_L').empty().append('<option value="0">缺貨<option>');
 
-  jQuery('#A_SL_L').parent().find(':input').attr('disabled', true);
-  jQuery('#A_SL_L').empty().append('<option value="0">缺貨<option>');
+  let allLockData = GetJsonData();
 
-  jQuery('#A_LP_L').parent().find(':input').attr('disabled', true);
-  jQuery('#A_LP_L').empty().append('<option value="0">缺貨<option>');
+  var pathArray = location.pathname.split('/');
+  while (pathArray.includes("")) {
+    pathArray.splice(pathArray.indexOf(""), 1)
+  }
+
+  for (let urlIndex = 0; urlIndex < Object.keys(allLockData).length; urlIndex++) { // 判斷JSON中有多少URL需要設定，並跑迴圈個別調整。
+    if (pathArray.includes(Object.keys(allLockData)[urlIndex])) { // 判斷使用者所在的頁面是否需要設定
+      let allLockProductInURL = allLockData[Object.keys(allLockData)[urlIndex]];
+      for (let productIndex = 0; productIndex < Object.keys(allLockProductInURL).length; productIndex++) {
+        // 將該URL內的每個商品ID上鎖。
+        if (jQuery('#' + Object.keys(allLockProductInURL)[productIndex]).length > 0) {
+          jQuery('#' + Object.keys(allLockProductInURL)[productIndex]).parent().find(':input').attr('disabled', true);
+          jQuery('#' + Object.keys(allLockProductInURL)[productIndex]).empty().append('<option value="0">' +
+            allLockProductInURL[Object.keys(allLockProductInURL)[productIndex]].text + '<option>');
+        } else {
+          throw ('not found ' + Object.keys(allLockProductInURL)[productIndex]);
+        }
+      }
+    }
+  }
+
 }
 
+function GetJsonData() {
+  let result;
+  let rawFile = new XMLHttpRequest();
+  let version = Date.now() * 1000 + Math.floor(Math.random() * 1000);
+  rawFile.open("GET", 'https://viagebeautybra.com/CommonFiles/js/lock.json?ver=' + version, false);
+  rawFile.onreadystatechange = function () {
+    if (rawFile.readyState === 4) {
+      if (rawFile.status === 200 || rawFile.status == 0) {
+        let allText = rawFile.responseText;
+        result = JSON.parse(allText);
+      }
+    }
+  }
+  rawFile.send(null);
+  return result.LockedProduct;
+}
 //for redmine #22970依賴 把缺貨的商品 櫻花粉S號顯示缺貨並鎖住下拉選項使其無法選購
 //for redmine #24339依賴 把缺貨的商品 海軍藍S號顯示缺貨並鎖住下拉選項使其無法選購
 function disableSize3() {
@@ -335,6 +368,27 @@ function preOrderPromptInit() {
   // 如果匹配的項目(總和)數量 == 0, 會持續執行迴圈
   if (preOrderProductList.filter(item => $(item).length != 0).length == 0) {
     return void setTimeout(preOrderPromptInit, 500);
+  }
+  preOrderProductList.forEach(item => {
+    let $element = $('<span>', {
+      text: '(預購)',
+      style: 'color: red; position: absolute;'
+    });
+    $(item).parent().find('.size-title').append($element);
+  });
+}
+
+function preOrderPromptInitAll() {
+  // A_BL_S DARKBLUE S
+  // A_BK_S BLACK S
+  // A_RD_M PINK M
+  // A_BK_M BLACK M
+  let $ = jQuery;
+  let preOrderProductList = ['#A_BK_S', '#A_SL_SM', '#A_SL_M', '#A_LP_S', '#A_RD_S', '#A_RD_SM', '#A_BL_S', '#A_BL_SM', '#A_BK_SM', '#A_LP_SM',
+   '#A_SL_L', '#A_SL_LL', '#A_LP_L', '#A_LP_LL', '#A_BL_M', '#A_BK_M', '#A_BK_L', '#A_SL_ML', '#A_LP_M', '#A_BK_LL', '#A_RD_M'];
+  // 如果匹配的項目(總和)數量 == 0, 會持續執行迴圈
+  if (preOrderProductList.filter(item => $(item).length != 0).length == 0) {
+    return void setTimeout(preOrderPromptInitAll, 500);
   }
   preOrderProductList.forEach(item => {
     let $element = $('<span>', {
